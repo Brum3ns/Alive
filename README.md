@@ -2,7 +2,7 @@ Check Alive host from a file.
 
 #### Install Alive:
 ```
-git clone
+git clone https://github.com/Brum3ns/Alive.git
 cd alive
 pip3 install -r requirement.txt
 chmod +x alive
