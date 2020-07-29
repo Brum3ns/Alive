@@ -6,6 +6,7 @@ git clone https://github.com/Brum3ns/Alive.git
 cd alive
 pip3 install -r requirement.txt
 chmod +x alive
+sudo cp alive /usr/bin
 ```
 
 #####  use: ./alive DOMAINS.txt
