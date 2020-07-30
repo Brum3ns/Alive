@@ -5,9 +5,9 @@ import random
 import sys
 import time
 
-####################################
-#  USE: ./script.py URL DOMAIN.TXT #
-####################################
+#############################################
+#  USE: ./script.py URL DOMAIN.TXT TIMEOUT  #
+#############################################
 
 #INFO VB:
 i = Fore.YELLOW + '[!]'
@@ -21,6 +21,8 @@ w = Fore.WHITE
 #Wordlist:
 filename = open(sys.argv[1])
 urls = filename.readlines()
+
+timeout = sys.argv[2]
 
 #REQUEST VB:
 dir = ''
@@ -46,7 +48,7 @@ def request():
             nr_line += 1
             nr_line = nr_line
             url = url.replace('\n', '')
-            req = requests.head('https://' + url, timeout=1)
+            req = requests.head('https://' + url, timeout=int(timeout))
             print (t, w+'['+str(nr_line)+']' +r+ '['+w+ str(req.url) +r+']'+w+ '\r\t\t\t\t\t\t\t\t\t|  RespTime: ' + str(req.elapsed.total_seconds()) + '\r\t\t\t\t\t\t\t\t\t\t\t\t|=>{' + str(req.status_code) + '}')
             #check alive:
             if req.status_code == 200:
